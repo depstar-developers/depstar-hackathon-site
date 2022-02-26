@@ -1,19 +1,22 @@
+import React from 'react';
+
 import {
+  Link,
   Box,
   Flex,
   Text,
-  IconButton,
   Button,
+  IconButton,
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
+  useBreakpointValue,
+  useColorMode,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -21,10 +24,13 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { BiSun, BiMoon } from 'react-icons/bi';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onToggle, onOpen } = useDisclosure();
 
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box>
       <Flex
@@ -56,7 +62,7 @@ export default function Navbar() {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}
+            color={'twitter.500'}
           >
             Logo
           </Text>
@@ -72,28 +78,33 @@ export default function Navbar() {
           direction={'row'}
           spacing={6}
         >
-          <Button
-            as={'a'}
-            fontSize={'md'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}
-          >
-            Sign In
-          </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'md'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'#'}
+          <IconButton
+            backgroundColor={useColorModeValue('gray.900', 'gray.100')}
+            color={useColorModeValue('gray.100', 'gray.900')}
+            onClick={toggleColorMode}
+            icon={
+              colorMode === 'light' ? <Icon as={BiMoon} /> : <Icon as={BiSun} />
+            }
+            w={8}
+            h={8}
+            size="lg"
+            aria-label={'Toggle Dark mode'}
+          />
+          <Link
+            href="https://github.com/Nabhag8848/tweetFeeds"
+            isExternal
             _hover={{
-              bg: 'pink.300',
+              textDecoration: 'none',
             }}
           >
-            Sign Up
-          </Button>
+            <IconButton
+              variant="unstyled"
+              size="sm"
+              isRound
+              onClick={onOpen}
+              icon={<FaGithub size={32} />}
+            />
+          </Link>
         </Stack>
       </Flex>
 
@@ -259,37 +270,7 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Title 1',
-    children: [
-      {
-        label: 'Label 1',
-        subLabel: 'This is label 1',
-        href: '#',
-      },
-      {
-        label: 'Label 2',
-        subLabel: 'This is label 2',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Title 2',
-    children: [
-      {
-        label: 'Label 3',
-        subLabel: 'This is label 3',
-        href: '#',
-      },
-      {
-        label: 'Label 4',
-        subLabel: 'This is label 4',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Title 3',
-    href: '#',
+    label: 'Home',
+    href: '/',
   },
 ];
