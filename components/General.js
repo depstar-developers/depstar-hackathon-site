@@ -39,7 +39,7 @@ const TEAM_INFO = [
     site: 'https://bio.link/nabhag8848',
     github: 'https://github.com/Nabhag8848',
     linkedin: 'http://www.linkedin.com/in/nabhag-motivaras-460b3b1aa',
-    img: 'me',
+    img: '/nabhag.jpg',
   },
   {
     name: 'Kartik Patel',
