@@ -17,6 +17,7 @@ import {
   useDisclosure,
   useBreakpointValue,
   useColorMode,
+  Avatar,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -34,8 +35,8 @@ export default function Navbar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
+        bg={useColorModeValue('gray.100', 'gray.800')}
+        color={useColorModeValue('gray.600', 'gray.100')}
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
@@ -59,13 +60,12 @@ export default function Navbar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={'twitter.500'}
-          >
-            Logo
-          </Text>
+          <Avatar
+            background={useColorModeValue('gray.100', 'gray.800')}
+            name="Depstar"
+            size="lg"
+            src="/depstar.png"
+          />
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -91,7 +91,7 @@ export default function Navbar() {
             aria-label={'Toggle Dark mode'}
           />
           <Link
-            href="https://github.com/Nabhag8848/tweetFeeds"
+            href="https://github.com/depstar-developers/depstar-hackathon-site"
             isExternal
             _hover={{
               textDecoration: 'none',
@@ -117,11 +117,11 @@ export default function Navbar() {
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  const linkHoverColor = useColorModeValue('gray.800', 'gray.100');
+  const popoverContentBgColor = useColorModeValue('gray.100', 'gray.800');
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Stack direction={'row'} alignSelf={'center'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -129,8 +129,8 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? '#'}
-                fontSize={'md'}
-                fontWeight={500}
+                fontSize={'lg'}
+                fontWeight={800}
                 color={linkColor}
                 _hover={{
                   textDecoration: 'none',
@@ -204,7 +204,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 const MobileNav = () => {
   return (
     <Stack
-      bg={useColorModeValue('white', 'gray.800')}
+      bg={useColorModeValue('gray.100', 'gray.800')}
       p={4}
       display={{ md: 'none' }}
     >
@@ -272,5 +272,13 @@ const NAV_ITEMS = [
   {
     label: 'Home',
     href: '/',
+  },
+  {
+    label: 'FAQ',
+    href: '#faq',
+  },
+  {
+    label: 'Team',
+    href: '#team',
   },
 ];
