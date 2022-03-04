@@ -15,7 +15,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 
-function QCard(q) {
+const QCard = (q) => {
   return (
     <AccordionItem
       borderRadius={8}
@@ -61,9 +61,9 @@ function QCard(q) {
       </AccordionPanel>
     </AccordionItem>
   );
-}
+};
 
-export const Faq = (props) => {
+const Faq = (props) => {
   const { faqs } = props;
   return (
     <Container maxW={'100%'} pb={32} height={'-moz-max-content'}>
@@ -101,3 +101,4 @@ export const Faq = (props) => {
     </Container>
   );
 };
+export default Faq;

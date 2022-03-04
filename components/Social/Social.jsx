@@ -15,7 +15,7 @@ import {
 } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
 
-export const Social = ({ socials }) => {
+const Social = ({ socials }) => {
   const SocialButton = ({ children, label, href }) => {
     return (
       <chakra.button
@@ -88,3 +88,5 @@ export const Social = ({ socials }) => {
     </Container>
   );
 };
+
+export default Social;

@@ -8,10 +8,10 @@ import {
   FOOTER,
 } from './General.js';
 import Home from './Home/Home';
-import { Faq } from './FAQ/Faq';
-import { Social } from './Social/Social';
+import Faq from './FAQ/Faq';
+import Social from './Social/Social';
 
-export default function HomePage(props) {
+const HomePage = (props) => {
   return (
     <>
       <div className="home">
@@ -25,4 +25,5 @@ export default function HomePage(props) {
       </div>
     </>
   );
-}
+};
+export default HomePage;

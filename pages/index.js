@@ -1,6 +1,6 @@
 import { Box, useColorModeValue } from '@chakra-ui/react';
-import HomePage from './components/HomePage';
-import Navbar from './components/NavBar';
+import HomePage from '../components/HomePage';
+import Navbar from '../components/NavBar';
 
 export default function Home() {
   return (

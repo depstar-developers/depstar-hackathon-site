@@ -28,7 +28,7 @@ import {
 import { BiSun, BiMoon } from 'react-icons/bi';
 import { FaGithub } from 'react-icons/fa';
 
-export default function Navbar() {
+const Navbar = () => {
   const { isOpen, onToggle, onOpen } = useDisclosure();
 
   const { colorMode, toggleColorMode } = useColorMode();
@@ -113,7 +113,7 @@ export default function Navbar() {
       </Collapse>
     </Box>
   );
-}
+};
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
@@ -282,3 +282,5 @@ const NAV_ITEMS = [
     href: '#team',
   },
 ];
+
+export default Navbar;

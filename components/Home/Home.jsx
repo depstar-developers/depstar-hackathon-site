@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react';
 import Typed from 'react-typed';
 
-export default function Home({ info }) {
+const Home = ({ info }) => {
   const mover = keyframes`
   0% { transform: translateY(0); }
   100% { transform: translateY(-32px); }
@@ -105,4 +105,6 @@ export default function Home({ info }) {
       </Stack>
     </Container>
   );
-}
+};
+
+export default Home;
