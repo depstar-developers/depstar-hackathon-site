@@ -19,7 +19,7 @@ const QCard = (q) => {
   return (
     <AccordionItem
       borderRadius={8}
-      bg={useColorModeValue('gray.200', 'gray.700')}
+      bg={useColorModeValue('gray.200', 'gray.900')}
       key={q.label}
     >
       <AccordionButton>
@@ -42,7 +42,7 @@ const QCard = (q) => {
           p={10}
           justifyContent={'space-between'}
           position={'relative'}
-          bg={useColorModeValue('gray.100', 'gray.600')}
+          bg={useColorModeValue('gray.300', 'gray.700')}
         >
           <Flex
             direction={'column'}
@@ -66,7 +66,7 @@ const QCard = (q) => {
 const Faq = (props) => {
   const { faqs } = props;
   return (
-    <Container maxW={'100%'} pb={32} height={'-moz-max-content'}>
+    <Container maxW={'300%'} pb={32} height={'-moz-max-content'}>
       <Flex
         textAlign={'center'}
         pt={10}
@@ -79,8 +79,8 @@ const Faq = (props) => {
             py={4}
             fontSize={{ base: '4xl', sm: '5xl', lg: '6xl' }}
             fontFamily={'Work Sans'}
-            fontWeight={'bold'}
-            color={useColorModeValue('gray.700', 'gray.50')}
+            fontWeight={500}
+            color={useColorModeValue('gray.900', 'gray.100')}
           >
             {`FAQs`}
           </chakra.h1>

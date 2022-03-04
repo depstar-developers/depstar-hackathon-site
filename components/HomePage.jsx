@@ -1,15 +1,9 @@
 import React from 'react';
-import {
-  TOP_SECTION,
-  SOCIALS,
-  TeamInfo,
-  JudgesInfo,
-  frequentlyAskedQuestions,
-  FOOTER,
-} from './General.js';
+import { TOP_SECTION, SOCIALS, TEAM_INFO, FAQ, FOOTER } from './General.js';
 import Home from './Home/Home';
 import Faq from './FAQ/Faq';
 import Social from './Social/Social';
+import Team from './Team/Team.jsx';
 
 const HomePage = (props) => {
   return (
@@ -21,7 +15,10 @@ const HomePage = (props) => {
         <Social socials={SOCIALS} />
       </div>
       <div className="faq" id="faq">
-        <Faq faqs={frequentlyAskedQuestions} />
+        <Faq faqs={FAQ} />
+      </div>
+      <div className="team" id="team">
+        <Team team={TEAM_INFO} />
       </div>
     </>
   );
